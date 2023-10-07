@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "nombre": "Counter Strike 2",
+    "duracion": 35,
+    "genero": "shooter",
+    "imagen": "cs2.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "The Binding Of Isaac",
+    "duracion": 60,
+    "genero": "Roguelike",
+    "imagen": "afterbirth+.webp"
+  },
+  {
+    "id": 3,
+    "nombre": "God Of War",
+    "duracion": 350,
+    "genero": "Hack and slash",
+    "imagen": "GodofWar.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Clash Royale",
+    "duracion": 15,
+    "genero": "Constructor de barajas",
+    "imagen": "clashroyale.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Slay The Spire",
+    "duracion": 35,
+    "genero": "Constructor de barajas, Roguelite",
+    "imagen": "slaythespire.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Risk Of Rain 2",
+    "duracion": 110,
+    "genero": "Roguelike, cooperativo",
+    "imagen": "cs2.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Red Dead Redemption 2",
+    "duracion": 180,
+    "genero": "shooter",
+    "imagen": "rdr2.jpg"
+  }
+]

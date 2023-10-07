@@ -1,11 +1,12 @@
 // este simulador va a estar diseñado para recomendar un juego cuando disponemos de un tiempo especifico para jugar, debido a que una de las problematicas actuales es tener muchos juegos en la biblioteca pero poco tiempo para jugarlos
 
 class Juego {
-  constructor(id, nombre, tiempoP, categoria) {
+  constructor(id, nombre, tiempoP, categoria, imagen) {
     (this.id = id),
       (this.nombre = nombre),
       (this.tiempoP = tiempoP),
       (this.categoria = categoria);
+    this.imagen = imagen;
   }
   infoJuego() {
     console.log(
@@ -21,30 +22,6 @@ class Juego {
     console.log(`El id de ${this.nombre} es ${this.id}`);
   }
 }
-
-const juego1 = new Juego(1, "Counter-Strike", 60, "shooter , en linea");
-
-const juego2 = new Juego(2, "The binding of isaac", 45, "roguelike");
-
-const juego3 = new Juego(3, "God of War 2018", 330, "accion , aventura");
-
-const juego4 = new Juego(
-  4,
-  "Clash Royale",
-  10,
-  "constructor de barajas , en linea"
-);
-
-const juego5 = new Juego(
-  5,
-  "Slay the Spire",
-  70,
-  "constructor de barajas , roguelike"
-);
-
-const juego6 = new Juego(6, "Risk Of Rain 2", 110, "roguelike , en linea");
-
-const juego7 = new Juego(7, "Red Dead Redemption 2", 410, "accion , shooter");
 
 // juegos precargados para la simulacion (algunos son de mi gusto personal, otros de consumo masivo)
 let instalados = [];
@@ -116,20 +93,20 @@ function mostrarId(array) {
 function eliminarJuego(array) {
   mostrarId(array);
   let eliminarId = parseInt(
-    prompt("Ingrese el ID del juego indicado en la consola (solo valores númericos)")
-  );
-  const coincidencia = array.find((elem) => elem.id === eliminarId)
-  if (!coincidencia) {
-    alert(`El id ingresado no existe`)
-    return
-  }
-  let preguntaID = parseInt(
     prompt(
-      `Usted desea eliminar el juego ${coincidencia.nombre} 1: Si 2: No`
+      "Ingrese el ID del juego indicado en la consola (solo valores númericos)"
     )
   );
+  const coincidencia = array.find((elem) => elem.id === eliminarId);
+  if (!coincidencia) {
+    alert(`El id ingresado no existe`);
+    return;
+  }
+  let preguntaID = parseInt(
+    prompt(`Usted desea eliminar el juego ${coincidencia.nombre} 1: Si 2: No`)
+  );
   switch (preguntaID) {
-    case 1:     
+    case 1:
       let idBuscada = array.filter((elem) => elem.id !== eliminarId);
       instalados = idBuscada;
       alert("Usted eliminó el juego ingresado");
@@ -183,4 +160,4 @@ function opciones() {
     }
   } while (!salir);
 }
-opciones();
+// opciones();
