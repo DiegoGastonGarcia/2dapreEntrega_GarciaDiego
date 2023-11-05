@@ -1,6 +1,7 @@
 let gameDiv = document.getElementById("containerJuegos");
 let agregarJuegoBtn = document.getElementById("agregarBtn");
-let eliminarJuegoBtn = document.getElementById("deleteBtn");
+
+let espera = document.getElementById("espera");
 
 function mostrarJuego(array) {
   gameDiv.innerHTML = "";
@@ -13,7 +14,7 @@ function mostrarJuego(array) {
                     <div class="card-body">
                       <h5 class="card-title">${juego.nombre}</h5>
                       <p class="card-text">Pertenece al genero de ${juego.genero} y la duracion promedio de una partida es de ${juego.duracion} minutos.</p>
-                      <button class="btn btn-primary" id="deleteBtn" >Eliminar Juego</button>
+                      <button class="btn btn-primary deleteBtn"  >Eliminar Juego</button>
                     </div>
                   </div>`;
     gameDiv.append(cardJuego);
@@ -35,7 +36,7 @@ function juegoNuevo(array) {
   nombre.value = "";
   genero.value = "";
   duracion.value = "";
-  localStorage.setItem("bliblioteca", JSON.stringify(biblioteca));
+  localStorage.setItem("biblioteca", JSON.stringify(biblioteca));
 }
 
 agregarJuegoBtn.addEventListener("click", () => {
@@ -45,5 +46,15 @@ agregarJuegoBtn.addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  mostrarJuego(biblioteca);
+  setTimeout(() => {
+    espera.remove();
+    mostrarJuego(biblioteca);
+    let eliminarJuegoBtn = document.getElementsByClassName("deleteBtn");
+    for (let button of eliminarJuegoBtn) {
+      button.addEventListener("click", () => {
+        console.log("boton funcionando");
+      });
+    }
+    console.log(eliminarJuegoBtn);
+  }, 1700);
 });

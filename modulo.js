@@ -42,7 +42,6 @@ if (localStorage.getItem("biblioteca")) {
   }
 } else {
   cargarBiblioteca();
-  console.log(biblioteca);
 }
 
 // consultar que jugar hoy con mi tiempo disponible
