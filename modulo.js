@@ -24,7 +24,6 @@ let cargarBiblioteca = async () => {
     biblioteca.push(newgame);
   }
   localStorage.setItem("biblioteca", JSON.stringify(biblioteca));
-  console.log(cargarBiblioteca);
 };
 
 // juegos precargados para la simulacion (algunos son de mi gusto personal, otros de consumo masivo)
